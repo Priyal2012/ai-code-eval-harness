@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codeeval"
+version = "0.1.0"
+description = "A harness for evaluating AI-generated code the way a practicing engineer reviews a PR."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Priyal Meena" }]
+dependencies = []
+
+[project.optional-dependencies]
+judge = ["requests>=2.31"]
+dev = ["pytest>=7", "ruff>=0.4", "requests>=2.31"]
+
+[project.scripts]
+codeeval = "codeeval.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["codeeval*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+exclude = ["tasks/*/candidates"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
