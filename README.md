@@ -78,7 +78,7 @@ Run `python -m codeeval evaluate tasks` to see the full report (an example is in
 ## Install & use
 
 ```bash
-git clone https://github.com/Priyal2004784/ai-code-eval-harness
+git clone https://github.com/Priyal2012/ai-code-eval-harness
 cd ai-code-eval-harness
 pip install -e ".[dev]"        # no runtime dependencies; dev adds pytest + ruff
 
